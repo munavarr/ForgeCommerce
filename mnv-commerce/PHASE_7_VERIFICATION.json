@@ -1,0 +1,221 @@
+{
+  "date": "2026-10-29",
+  "application": "/Users/munavark/Downloads/vendure-master/mnv-commerce",
+  "versions": {
+    "node": "26.5.0",
+    "npm": "11.17.0",
+    "postgres": "18.4 (Homebrew)",
+    "platform": "darwin arm64"
+  },
+  "unit": {
+    "baselinePassed": 43,
+    "finalPassed": 44,
+    "failed": 0,
+    "skipped": 0
+  },
+  "postgres": {
+    "baseline": {
+      "reportedPasses": 66,
+      "parentTests": 5,
+      "subtests": 61,
+      "suites": {
+        "migration": 7,
+        "inventory": 15,
+        "commerce": 13,
+        "authentication": 12,
+        "payments": 19
+      },
+      "cluster": {
+        "postgres": "postgres (PostgreSQL) 18.4 (Homebrew)",
+        "development": "mnv_commerce_dev_004e83ff9668",
+        "disposable": "mnv_commerce_test_004e83ff9668",
+        "workflow": "mnv_commerce_test_004e83ff9668_workflow",
+        "authentication": "mnv_commerce_test_004e83ff9668_auth",
+        "payments": "mnv_commerce_test_004e83ff9668_payments",
+        "host": "127.0.0.1",
+        "port": 51322,
+        "result": "passed"
+      },
+      "evidencePath": "/var/folders/yq/cc_0bmxn2cd8dy3yrrxhjngh0000gn/T/mnv-postgres-q10fLt/verification.json",
+      "log": "/private/tmp/mnv-phase7-baseline-postgres.log"
+    },
+    "final": {
+      "reportedPasses": 78,
+      "parentTests": 6,
+      "subtests": 72,
+      "suites": {
+        "migration": 7,
+        "inventory": 17,
+        "commerce": 13,
+        "authentication": 13,
+        "payments": 22,
+        "operations": 6
+      },
+      "cluster": {
+        "postgres": "postgres (PostgreSQL) 18.4 (Homebrew)",
+        "development": "mnv_commerce_dev_b333f7a7d417",
+        "disposable": "mnv_commerce_test_b333f7a7d417",
+        "workflow": "mnv_commerce_test_b333f7a7d417_workflow",
+        "authentication": "mnv_commerce_test_b333f7a7d417_auth",
+        "payments": "mnv_commerce_test_b333f7a7d417_payments",
+        "operations": "mnv_commerce_test_b333f7a7d417_operations",
+        "host": "127.0.0.1",
+        "port": 51851,
+        "result": "passed"
+      },
+      "evidencePath": "/var/folders/yq/cc_0bmxn2cd8dy3yrrxhjngh0000gn/T/mnv-postgres-pYRflr/verification.json",
+      "log": "/private/tmp/mnv-phase7-final-postgres.log"
+    }
+  },
+  "postgres16": {
+    "verified": false,
+    "requestedMajorGuardExit": 1,
+    "blocker": "PostgreSQL 16 binaries absent; Docker daemon socket unavailable; no daemon/service started"
+  },
+  "audit": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "dependencies": {
+      "prod": 219,
+      "dev": 0,
+      "optional": 2,
+      "peer": 0,
+      "peerOptional": 0,
+      "total": 220
+    }
+  },
+  "boundary": {
+    "sourceFiles": 59,
+    "imports": 319,
+    "externalImports": [
+      "@nestjs/common",
+      "@nestjs/core",
+      "argon2",
+      "reflect-metadata",
+      "rxjs",
+      "typeorm",
+      "typescript"
+    ],
+    "runtimeDependencies": 8,
+    "developmentDependencies": 3,
+    "lockEntries": 221,
+    "scannedRetainedFiles": 101,
+    "migrationHashesMatchPhase6": true,
+    "deletionEntriesChecked": 5894,
+    "originalLegalFilesChecked": 6,
+    "dynamicImportsForManualReview": [
+      {
+        "file": "scripts/verify-boundary.js",
+        "line": 46
+      }
+    ],
+    "errors": []
+  },
+  "changedExistingFiles": [
+    "mnv-commerce/README.md",
+    "mnv-commerce/test/payments.postgres.integration.js",
+    "mnv-commerce/test/inventory.postgres.integration.js",
+    "mnv-commerce/test/foundation.test.js",
+    "mnv-commerce/test/auth.postgres.integration.js",
+    "mnv-commerce/scripts/test-postgres-isolated.js",
+    "mnv-commerce/src/main.ts",
+    "mnv-commerce/src/database/database.module.ts",
+    "mnv-commerce/src/common/safe-logger.ts"
+  ],
+  "removedExistingFiles": [],
+  "protectedBackup": {
+    "sha256MatchesPhase6": true,
+    "mode": "0400",
+    "modified": false
+  },
+  "preExistingPhaseReviewsCleanupLegalMigrationsManifestsUnchanged": true,
+  "clusterStatus": [
+    {
+      "data": "/var/folders/yq/cc_0bmxn2cd8dy3yrrxhjngh0000gn/T/mnv-postgres-q10fLt/data",
+      "statusExit": 3,
+      "running": false
+    },
+    {
+      "data": "/var/folders/yq/cc_0bmxn2cd8dy3yrrxhjngh0000gn/T/mnv-postgres-H1SgUA/data",
+      "statusExit": 3,
+      "running": false
+    },
+    {
+      "data": "/var/folders/yq/cc_0bmxn2cd8dy3yrrxhjngh0000gn/T/mnv-postgres-Yq5lOy/data",
+      "statusExit": 3,
+      "running": false
+    },
+    {
+      "data": "/var/folders/yq/cc_0bmxn2cd8dy3yrrxhjngh0000gn/T/mnv-postgres-SkIPGS/data",
+      "statusExit": 3,
+      "running": false
+    },
+    {
+      "data": "/var/folders/yq/cc_0bmxn2cd8dy3yrrxhjngh0000gn/T/mnv-postgres-tSl9Ic/data",
+      "statusExit": 3,
+      "running": false
+    },
+    {
+      "data": "/var/folders/yq/cc_0bmxn2cd8dy3yrrxhjngh0000gn/T/mnv-postgres-pYRflr/data",
+      "statusExit": 3,
+      "running": false
+    }
+  ],
+  "finalCommands": [
+    {
+      "command": "npm ci --offline --cache /private/tmp/mnv-phase7-npm-cache --no-audit --no-fund",
+      "exit": 0,
+      "log": "/private/tmp/mnv-phase7-final-ci.log"
+    },
+    {
+      "command": "npm run typecheck",
+      "exit": 0,
+      "log": "/private/tmp/mnv-phase7-final-typecheck.log"
+    },
+    {
+      "command": "npm run build",
+      "exit": 0,
+      "log": "/private/tmp/mnv-phase7-final-build.log"
+    },
+    {
+      "command": "npm test",
+      "exit": 0,
+      "log": "/private/tmp/mnv-phase7-final-unit.log"
+    },
+    {
+      "command": "npm run test:postgres:isolated",
+      "exit": 0,
+      "log": "/private/tmp/mnv-phase7-final-postgres.log"
+    },
+    {
+      "command": "npm audit --json --cache /private/tmp/mnv-phase7-npm-cache --fetch-retries=0 --fetch-timeout=20000",
+      "exit": 0,
+      "log": "/private/tmp/mnv-phase7-final-audit.json"
+    },
+    {
+      "command": "npm ls --depth=0",
+      "exit": 0,
+      "log": "/private/tmp/mnv-phase7-final-dependencies.log"
+    },
+    {
+      "command": "node scripts/verify-boundary.js",
+      "exit": 0,
+      "log": "/private/tmp/mnv-phase7-final-boundary.json"
+    }
+  ],
+  "limitations": [
+    "No PostgreSQL 16 compatibility claim",
+    "No production readiness claim",
+    "No remote CI or container execution",
+    "No minimum Node or other native-platform validation",
+    "No live payment provider or account credential action"
+  ],
+  "gitInitialized": false,
+  "published": false
+}

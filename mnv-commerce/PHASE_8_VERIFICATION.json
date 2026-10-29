@@ -1,0 +1,68 @@
+{
+  "/private/tmp/mnv-phase8-provision.log": {
+    "sha256": "8e785962b20a974683abf7ee4005706287edd71fba6e2116979891d5ace6da7f"
+  },
+  "/private/tmp/mnv-phase8-typecheck.log": {
+    "sha256": "98464ca3fbe1c34dc488eb5502d4cfd244bdf9227bcc88e81a32b17616594311"
+  },
+  "/private/tmp/mnv-phase8-build.log": {
+    "sha256": "c4e36d635ed05e57d1c076b0a3ac2722cf14ade47d386843bc51923f4c4e8d87"
+  },
+  "/private/tmp/mnv-phase8-unit.log": {
+    "sha256": "ce4a2c6ceae4574bfc3021341b411cb4ab3787e06620e03e0b164908c133d48c"
+  },
+  "/private/tmp/mnv-phase8-pg16-preflight.log": {
+    "sha256": "2419c7a1d7f486f9b5e700327a5cd5e1fb415f9ae1206008d2cc4a3ded500500"
+  },
+  "/private/tmp/mnv-phase8-pg16.log": {
+    "sha256": "7e5e237136526bb3add837b2d6e02d175477c07b79fc9b0168e2990c972b5268"
+  },
+  "/private/tmp/mnv-phase8-pg18.log": {
+    "sha256": "4f36bf01bd0defe21c93e3da637d5df6b2506e858523816a885c17a07b416107"
+  },
+  "/private/tmp/mnv-phase8-audit.json": {
+    "sha256": "abcf9a393d63fc0f7562b87bb163684d54549d4b96c7775e2ebc24f8633e15d6"
+  },
+  "/private/tmp/mnv-phase8-audit-network.json": {
+    "sha256": "695077c58e0c7a8a58e644c28470375b04e2fe4053275a834d887e1ef2d97b37"
+  },
+  "/private/tmp/mnv-phase8-boundary.json": {
+    "sha256": "9715a0c430be77746651b5e48fd576b1b16d0be551525633f0510d0dcfdaf473"
+  },
+  "/var/folders/yq/cc_0bmxn2cd8dy3yrrxhjngh0000gn/T/mnv-postgres-XSlJWQ/verification.json": {
+    "postgres": "postgres (PostgreSQL) 16.15 (Homebrew)",
+    "development": "mnv_commerce_dev_6c43143f57da",
+    "disposable": "mnv_commerce_test_6c43143f57da",
+    "workflow": "mnv_commerce_test_6c43143f57da_workflow",
+    "authentication": "mnv_commerce_test_6c43143f57da_auth",
+    "payments": "mnv_commerce_test_6c43143f57da_payments",
+    "operations": "mnv_commerce_test_6c43143f57da_operations",
+    "host": "127.0.0.1",
+    "port": 52134,
+    "result": "passed"
+  },
+  "/var/folders/yq/cc_0bmxn2cd8dy3yrrxhjngh0000gn/T/mnv-postgres-1WNlsp/verification.json": {
+    "postgres": "postgres (PostgreSQL) 16.15 (Homebrew)",
+    "development": "mnv_commerce_dev_b9fc836c599c",
+    "disposable": "mnv_commerce_test_b9fc836c599c",
+    "workflow": "mnv_commerce_test_b9fc836c599c_workflow",
+    "authentication": "mnv_commerce_test_b9fc836c599c_auth",
+    "payments": "mnv_commerce_test_b9fc836c599c_payments",
+    "operations": "mnv_commerce_test_b9fc836c599c_operations",
+    "host": "127.0.0.1",
+    "port": 52271,
+    "result": "passed"
+  },
+  "/var/folders/yq/cc_0bmxn2cd8dy3yrrxhjngh0000gn/T/mnv-postgres-ncT5PS/verification.json": {
+    "postgres": "postgres (PostgreSQL) 18.4 (Homebrew)",
+    "development": "mnv_commerce_dev_d2855c45c346",
+    "disposable": "mnv_commerce_test_d2855c45c346",
+    "workflow": "mnv_commerce_test_d2855c45c346_workflow",
+    "authentication": "mnv_commerce_test_d2855c45c346_auth",
+    "payments": "mnv_commerce_test_d2855c45c346_payments",
+    "operations": "mnv_commerce_test_d2855c45c346_operations",
+    "host": "127.0.0.1",
+    "port": 52323,
+    "result": "passed"
+  }
+}

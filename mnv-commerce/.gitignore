@@ -1,0 +1,43 @@
+# Dependencies and generated output
+node_modules/
+dist/
+coverage/
+*.log
+npm-debug.log*
+.DS_Store
+.idea/
+.vscode/
+
+# Local configuration; only the placeholder template belongs in source
+.env
+.env.*
+!.env.example
+.npmrc
+.pgpass
+.pg_service.conf
+
+# Database contents, dumps, private keys and backup material
+*.sql
+*.dump
+*.backup
+*.bak
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+backups/
+backup/
+mnv-commerce-backups/
+postgres-data/
+.pgdata/

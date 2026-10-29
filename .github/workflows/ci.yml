@@ -1,0 +1,76 @@
+name: MNV Commerce
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mnv-commerce-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mnv-commerce
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          # Only reviewed application inputs enter this job; no local data/backups.
+          sparse-checkout: |
+            /mnv-commerce/src/
+            /mnv-commerce/test/
+            /mnv-commerce/scripts/
+            /mnv-commerce/license/
+            /mnv-commerce/package.json
+            /mnv-commerce/package-lock.json
+            /mnv-commerce/tsconfig.json
+            /mnv-commerce/LICENSE.md
+            /mnv-commerce/NOTICE.md
+            !/mnv-commerce/**/.env*
+            !/mnv-commerce/**/.npmrc
+            !/mnv-commerce/**/.pgpass
+            !/mnv-commerce/**/*.pem
+            !/mnv-commerce/**/*.key
+            !/mnv-commerce/**/*.p12
+            !/mnv-commerce/**/*.pfx
+            !/mnv-commerce/**/*.jks
+            !/mnv-commerce/**/*.keystore
+            !/mnv-commerce/**/*.sql
+            !/mnv-commerce/**/*.dump
+            !/mnv-commerce/**/*.backup
+            !/mnv-commerce/**/*.bak
+            !/mnv-commerce/**/*.db*
+            !/mnv-commerce/**/*.sqlite*
+            !/mnv-commerce/**/*.tar*
+            !/mnv-commerce/**/*.tgz
+            !/mnv-commerce/**/*.zip
+            !/mnv-commerce/**/backup/
+            !/mnv-commerce/**/backups/
+            !/mnv-commerce/**/mnv-commerce-backups/
+            !/mnv-commerce/**/postgres-data/
+            !/mnv-commerce/**/.pgdata/
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '26'
+          cache: npm
+          cache-dependency-path: mnv-commerce/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npm test
+      - name: Install local PostgreSQL test binaries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql
+          echo "$(pg_config --bindir)" >> "$GITHUB_PATH"
+      - name: Verify fresh isolated PostgreSQL cluster
+        run: npm run test:postgres:isolated
+      - run: npm audit

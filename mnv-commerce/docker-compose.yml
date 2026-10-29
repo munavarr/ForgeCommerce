@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16.15-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: mnv_commerce
+      POSTGRES_USER: mnv_commerce
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD locally before starting PostgreSQL}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - mnv_commerce_postgres_data:/var/lib/postgresql/data
+volumes:
+  mnv_commerce_postgres_data:

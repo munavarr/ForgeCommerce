@@ -1,0 +1,1 @@
+export const commerceTables = ['users', 'sessions', 'products', 'product_variants', 'stock_locations', 'stock_levels', 'orders', 'order_lines', 'stock_reservations', 'stock_movements', 'order_transitions', 'payment_attempts', 'idempotency_records'] as const;

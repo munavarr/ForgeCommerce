@@ -1,0 +1,20 @@
+[
+  {
+    "batch": "1-unused-surfaces",
+    "files_deleted": 4478,
+    "bytes_deleted": 65723319,
+    "all_targets_absent": true
+  },
+  {
+    "batch": "2-workspace-tooling",
+    "files_deleted": 107,
+    "bytes_deleted": 3437812,
+    "all_targets_absent": true
+  },
+  {
+    "batch": "3-core-common",
+    "files_deleted": 1309,
+    "bytes_deleted": 17315506,
+    "all_targets_absent": true
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "name": "mnv-commerce",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Independent MNV Commerce backend with PostgreSQL inventory, checkout, authentication and payment recovery",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --watch --require ts-node/register src/main.ts",
+    "start": "node --env-file-if-exists=.env dist/main.js",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/*.test.js",
+    "migration:run": "npm run build && node --env-file-if-exists=.env dist/database/migrate.js run",
+    "migration:revert": "npm run build && node --env-file-if-exists=.env dist/database/migrate.js revert",
+    "migration:show": "npm run build && node --env-file-if-exists=.env dist/database/migrate.js show",
+    "test:postgres": "npm run test:postgres:isolated",
+    "test:postgres:isolated": "npm run build && node scripts/test-postgres-isolated.js",
+    "admin:create": "npm run build && node --env-file-if-exists=.env dist/auth/create-admin.js",
+    "payment:reconcile": "npm run build && node --env-file-if-exists=.env dist/payments/reconcile.js"
+  },
+  "dependencies": {
+    "@nestjs/common": "12.0.1",
+    "@nestjs/core": "12.0.1",
+    "@nestjs/platform-express": "12.3.2",
+    "argon2": "0.45.1",
+    "pg": "8.16.3",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2",
+    "typeorm": "0.3.31"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.27",
+    "ts-node": "10.9.2",
+    "typescript": "5.8.2"
+  },
+  "license": "GPL-3.0-or-later"
+}

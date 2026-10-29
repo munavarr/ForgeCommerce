@@ -1,0 +1,317 @@
+{
+  "date": "2026-10-29",
+  "node": "26.5.0",
+  "npm": "11.17.0",
+  "backup": {
+    "path": "/Users/munavark/Downloads/mnv-commerce-backups/stage-3a-original-20261028T071339Z/vendure-master-original.tar.gz",
+    "sha256": "5390dfa2144f177b5e08f1d93b047d40ba0e3ebb60eb759b12a83a3c65b5dea7",
+    "mode": "0o400",
+    "unchanged": true
+  },
+  "deletions": [
+    {
+      "batch": "1-unused-surfaces",
+      "files_deleted": 4478,
+      "bytes_deleted": 65723319,
+      "all_targets_absent": true
+    },
+    {
+      "batch": "2-workspace-tooling",
+      "files_deleted": 107,
+      "bytes_deleted": 3437812,
+      "all_targets_absent": true
+    },
+    {
+      "batch": "3-core-common",
+      "files_deleted": 1309,
+      "bytes_deleted": 17315506,
+      "all_targets_absent": true
+    }
+  ],
+  "deletedFiles": 5894,
+  "deletedBytes": 86476637,
+  "originalApplicationSourceTestsAndHarnessUnchanged": 57,
+  "originalLegalFilesUnchanged": 6,
+  "changedApplicationFiles": [
+    "mnv-commerce/.dockerignore",
+    "mnv-commerce/.gitignore",
+    "mnv-commerce/README.md",
+    "mnv-commerce/docker-compose.yml",
+    "mnv-commerce/package-lock.json",
+    "mnv-commerce/package.json"
+  ],
+  "migrationSha256": {
+    "1793145600000-initial-commerce.ts": "cdfd994a23ce463ced2393b6248832deaf0f20c63c1cb1b9e96fc7432831b406",
+    "1793232000000-inventory-engine.ts": "49907c5145bd793fa82d8c3abc83ab00f36808c4df5bdd3f0f9c76e69271d389",
+    "1793318400000-commerce-workflow.ts": "1635660e0a535691c7caefbcb40e7f1d926a008ea2a5aaacca584d5fca69e5ea",
+    "1793404800000-authentication.ts": "9365444b6f9092c426b477cc07c6ecc96fd4d517d7f2760a189f23db345a1350",
+    "1793491200000-payment-reliability.ts": "c03845d014f8c133c8315c064cbd7e4119737dcd00b3c334c9dc8175436957df"
+  },
+  "imports": {
+    "files": 56,
+    "edges": 295,
+    "externalImports": [
+      "@nestjs/common",
+      "@nestjs/core",
+      "argon2",
+      "reflect-metadata",
+      "rxjs",
+      "typeorm"
+    ],
+    "directRuntimeDependencies": 8,
+    "directDevDependencies": 3,
+    "lockEntries": 221,
+    "errors": []
+  },
+  "auditMetadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "dependencies": {
+      "prod": 219,
+      "dev": 0,
+      "optional": 2,
+      "peer": 0,
+      "peerOptional": 0,
+      "total": 220
+    }
+  },
+  "finalPostgres": {
+    "postgres": "postgres (PostgreSQL) 18.4 (Homebrew)",
+    "development": "mnv_commerce_dev_6e7513fd1774",
+    "disposable": "mnv_commerce_test_6e7513fd1774",
+    "workflow": "mnv_commerce_test_6e7513fd1774_workflow",
+    "authentication": "mnv_commerce_test_6e7513fd1774_auth",
+    "payments": "mnv_commerce_test_6e7513fd1774_payments",
+    "host": "127.0.0.1",
+    "port": 50822,
+    "result": "passed"
+  },
+  "operationalCommandSmoke": {
+    "database": "mnv_commerce_test_344e9a5bed88_commands",
+    "marker": "mnv-commerce:disposable-test",
+    "owner": "mnv_migrator",
+    "runtime": "mnv_runtime",
+    "host": "127.0.0.1",
+    "port": 50894,
+    "postgres": "postgres (PostgreSQL) 18.4 (Homebrew)",
+    "commands": [
+      {
+        "command": "npm run migration:show",
+        "exit": 0
+      },
+      {
+        "command": "npm run migration:run",
+        "exit": 0
+      },
+      {
+        "command": "npm run migration:run",
+        "exit": 0
+      },
+      {
+        "command": "npm run migration:show",
+        "exit": 0
+      },
+      {
+        "command": "npm run payment:reconcile",
+        "exit": 0
+      },
+      {
+        "command": "npm run start",
+        "liveness": 200,
+        "readiness": 200
+      },
+      {
+        "command": "npm run dev",
+        "liveness": 200,
+        "readiness": 200
+      }
+    ],
+    "result": "passed"
+  },
+  "clustersIndependentlyConfirmedStopped": true,
+  "unitTests": {
+    "tests": 43,
+    "passed": 43,
+    "failed": 0,
+    "skipped": 0
+  },
+  "postgresTests": {
+    "reportedPasses": 66,
+    "parentTests": 5,
+    "subtests": 61,
+    "failed": 0,
+    "skipped": 0
+  },
+  "securityScan": {
+    "scannedFiles": 96,
+    "credentialPatternFindings": [],
+    "sensitiveArtifacts": [],
+    "externalTelemetryFindings": [],
+    "placeholderEnvironmentOnly": true,
+    "credentialRelatedReferences": [
+      {
+        "path": "mnv-commerce/test/payments.postgres.integration.js",
+        "line": 29,
+        "classification": "test fixture"
+      },
+      {
+        "path": "mnv-commerce/test/auth.test.js",
+        "line": 10,
+        "classification": "test fixture"
+      },
+      {
+        "path": "mnv-commerce/test/auth.test.js",
+        "line": 100,
+        "classification": "test fixture"
+      },
+      {
+        "path": "mnv-commerce/test/foundation.test.js",
+        "line": 7,
+        "classification": "test fixture"
+      },
+      {
+        "path": "mnv-commerce/test/foundation.test.js",
+        "line": 21,
+        "classification": "test fixture"
+      },
+      {
+        "path": "mnv-commerce/test/schema.test.js",
+        "line": 30,
+        "classification": "test fixture"
+      },
+      {
+        "path": "mnv-commerce/test/auth.postgres.integration.js",
+        "line": 19,
+        "classification": "test fixture"
+      },
+      {
+        "path": "mnv-commerce/test/auth.postgres.integration.js",
+        "line": 78,
+        "classification": "test fixture"
+      }
+    ],
+    "remainingUpstreamReferences": [
+      {
+        "path": "LICENSE.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "README.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "AGENTS.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "SECURITY.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "license/license-faq.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "license/CLA.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "license/plugin-exception.txt",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/LICENSE.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/INVENTORY_REVIEW.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/PAYMENT_REVIEW.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/MIGRATION_REVIEW.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/README.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/AUTH_REVIEW.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/COMMERCE_REVIEW.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/.env.example",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/NOTICE.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/license/license-faq.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/license/CLA.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/license/plugin-exception.txt",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/cleanup/deletions.json",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/cleanup/PLAN.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/cleanup/verification.json",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/cleanup/REVIEW.md",
+        "context": "historical/legal/cleanup documentation"
+      },
+      {
+        "path": "mnv-commerce/src/database/options.ts",
+        "context": "runtime safety comment"
+      }
+    ]
+  },
+  "evidenceOutsideProject": [
+    "/private/tmp/mnv-phase6-before-postgres.log",
+    "/private/tmp/mnv-phase6-final-postgres.log",
+    "/private/tmp/mnv-phase6-command-smoke.log",
+    "/private/tmp/mnv-phase6-audit.json"
+  ],
+  "limitations": [
+    "PostgreSQL 16 and minimum Node version not tested",
+    "Remote CI not dispatched",
+    "No production readiness claim",
+    "Development payment simulation only"
+  ],
+  "documentationLinks": "all local Markdown file links resolve",
+  "composeValidation": {
+    "missingPasswordExit": 1,
+    "explicitGeneratedPasswordExit": 0,
+    "started": false
+  },
+  "ciValidation": "YAML parsed locally; remote CI not dispatched"
+}
